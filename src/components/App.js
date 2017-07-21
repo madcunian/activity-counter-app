@@ -1,4 +1,6 @@
 import { createClass } from 'react'
+import { SnowboardDayList } from './SnowboardDayList'
+import { SnowboardDayCount } from './SnowboardDayCount'
 
 export const App = createClass({
   getInitialState() {
@@ -26,10 +28,27 @@ export const App = createClass({
     }
   },
 
+  countDays(filter) {
+    return this.state.allSnowboardDays.filter(function(day) {
+      if(filter) {
+        return day[filter]
+      } else {
+        return day
+      }
+    }).length
+  },
+
   render() {
     return (
       <div className="app">
-        {this.state.allSnowboardDays[0]["resort"]}
+        <SnowboardDayList days={this.state.allSnowboardDays} />
+        <SnowboardDayCount total={this.countDays()}
+                           powder={this.countDays(
+                             "powder"
+                           )}
+                           backcountr={this.countDays(
+                             "backcountry"
+                           )} />
       </div>
     )
   }
