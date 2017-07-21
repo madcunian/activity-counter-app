@@ -2,7 +2,7 @@ import Terrain from 'react-icons/lib/md/terrain'
 import SnowFlake from 'react-icons/lib/md/ac-unit'
 import Calendar from 'react-icons/lib/fa/calendar'
 
-export const SnowboardDayRow = ({resort, date, powder, backcountry}) => {
+export const SnowboardDayRow = ({resort, date, powder, backcountry}) => (
   <tr>
     <td>
       {date.getMonth()+1}/{date.getDate()}/{date.getFullYear()}
@@ -11,10 +11,10 @@ export const SnowboardDayRow = ({resort, date, powder, backcountry}) => {
       {resort}
     </td>
     <td>
-      {(powder) ? return <SnowFlake /> : null}
+      {(powder) ? <SnowFlake /> : null}
     </td>
     <td>
-      {(backcountry) ? return <Terrain /> : null}
+      {(backcountry) ? <Terrain /> : null}
     </td>
   </tr>
-}
+)

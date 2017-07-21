@@ -16,10 +16,7 @@ export const SnowboardDayList = ({days}) => (
     <tbody>
       {days.map((day, i) =>
         <SnowboardDayRow key={i}
-                         resort={day.resort}
-                         date={day.date}
-                         powder={day.powder}
-                         backcountry={day.backcountry} />
+                         {...day} />
       )}
     </tbody>
   </table>
