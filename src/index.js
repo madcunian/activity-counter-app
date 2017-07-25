@@ -1,5 +1,6 @@
 import React from 'react'
 import { render } from 'react-dom'
+import './stylesheets/index.scss'
 import './stylesheets/ui.scss'
 import { App } from './components/App'
 import { Whoops404 } from './components/Whoops404'
